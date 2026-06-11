@@ -1,4 +1,4 @@
-# MIMIC 临床决策框架使用说明
+# MIMIC 临床决策框架
 
 ## 1. 项目简介
 
@@ -101,25 +101,3 @@ python run.py pathology=pancreatitis model=WizardLM70B
 - `*_results.pkl`：模型输出结果
 - `*_eval.pkl`：评估结果
 - `*.log`：运行日志
-
-## 8. 测试说明
-
-项目中包含测试文件 `tests/`，但部分测试依赖本地路径或 tokenizer 配置，直接运行可能需要先修改路径。若仅验证逻辑，可以先运行简单单元测试。
-
-```powershell
-python -m pytest tests/ -q
-```
-
-## 9. 注意事项
-
-1. `tests/DummyData.py` 中包含虚拟测试数据，仅用于测试。
-2. 实际任务运行通常需要真实 MIMIC 数据或已处理的数据集。
-3. Windows 环境运行本地模型时，需要确保 CUDA 和显卡驱动匹配。
-4. 若用 OpenAI 模型，请准备可用的 `openai_api_key`。
-
-## 10. 推荐运行流程
-
-1. 配置 `configs/paths/example.yaml` 和 `configs/model/*.yaml`。
-2. 安装依赖并激活虚拟环境。
-3. 先用 `run.py` 或 `run_full_info.py` 测试小规模样例。
-4. 查看 `local_logging_dir` 中的日志和结果文件。
